@@ -27,24 +27,24 @@
                         <div class="form-group row">
                             <label for="cedula" class="control-label col-md-2">Cédula</label>
                             <div class="col-md-4">
-                                <input class="form-control" type="text" placeholder="2400121314" maxlength="10"
+                                <input class="form-control soloNumeros" type="text" placeholder="2400121314" maxlength="10"
                                     minlength="10" id="cedula" name="cedula" required>
                             </div>
                             <label for="persona-nombres" class="control-label col-md-2">Nombre</label>
                             <div class="col-md-4">
-                                <input class="form-control" type="text" placeholder="Pedro" maxlength="100"
+                                <input class="form-control letras-vd" type="text" placeholder="Pedro" maxlength="100"
                                     minlength="3" id="persona-nombres" name="nombres" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="persona-apellidos" class="control-label col-md-2">Apellido</label>
                             <div class="col-md-4">
-                                <input class="form-control" type="text" placeholder=" Villon" maxlength="100"
+                                <input class="form-control letras-vd" type="text" placeholder=" Villon" maxlength="100"
                                     minlength="3" id="persona-apellidos" name="apellidos" required>
                             </div>
                             <label for="persona-telefono" class="control-label col-md-2">Teléfono</label>
                             <div class="col-md-4">
-                                <input class="form-control" type="text" placeholder="0999556677" maxlength="10"
+                                <input class="form-control numeros-vd" type="text" placeholder="0999556677" maxlength="10"
                                     minlength="10" id="persona-telefono" name="telefono">
                             </div>
                         </div>

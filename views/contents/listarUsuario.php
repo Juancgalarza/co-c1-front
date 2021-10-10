@@ -125,7 +125,7 @@
                             <div class="row">
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="">Usuario</label>
-                                    <input id="upda-usuario" type="text" class="form-control numeros-vd">
+                                    <input id="upda-usuario" type="text" class="form-control">
                                 </div>
                                 <input type="hidden" id="rol-id">
                                 <div class="col-12 col-md-6 form-group">
@@ -165,4 +165,4 @@
 <script src="<?=BASE?>views/plugins/pdfmake/pdfmake.min.js"></script>
 
 
-<script src="<?=BASE?>views/dist/js/scripts/listaUsuario.js?ver=1.1.1"></script>
+<script src="<?=BASE?>views/dist/js/scripts/listaUsuario.js?ver=1.1.1.1"></script>

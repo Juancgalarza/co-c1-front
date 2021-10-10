@@ -6,9 +6,8 @@ $(function(){
         iniciaNombres();
         cargarMenus();
         salir();
-        /* soloNumeros(); */
-        /* validaciones_generales();
-        mascaras_input(); */
+        soloNumeros();
+        validaciones_generales();
     }
 
     function getSesion(){
@@ -28,7 +27,7 @@ $(function(){
             let src = urlServidor+'resources/usuarios/'+sesion.img;
             $('#img-user-avatar').attr('src', src);
         }
-    }
+    } 
 
      function cargarMenus(){
 
@@ -127,17 +126,17 @@ $(function(){
                 text: "Desea salir de la aplicación!",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
+                confirmButtonColor: '#004a43',
                 cancelButtonColor: '#d33',
                 cancelButtonText: 'No',
                 confirmButtonText: 'Salir'
               }).then((result) => {
                 if (result.isConfirmed) {
-                  Swal.fire(
-                    'Exit!',
-                    'Su sesión ha finalizado',
-                    'success'
-                  )
+                  Swal.fire({
+                    title:'Exit!',
+                    text: 'Su sesión ha finalizado',
+                    confirmButtonColor: '#004a43',
+                });
 
                   localStorage.clear();
                   $(location).attr('href', urlCliente + 'login');
@@ -147,7 +146,7 @@ $(function(){
 
     }
 
-    /* function soloNumeros(){
+    function soloNumeros(){
       $('.soloNumeros').keydown(function(e) {
         var key = e.charCode || e.keyCode || 0;
         // allow backspace, tab, delete, arrows, numbers and keypad numbers ONLY
@@ -162,14 +161,10 @@ $(function(){
     }
 
     function validaciones_generales(){
-
       $('.letras-vd').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéiou');
       //Para escribir solo numeros    
       $('.numeros-vd').validCampoFranz('0123456789'); 
 
     }
 
-    function mascaras_input(){
-      $('[data-mask]').inputmask();
-    } */
 });

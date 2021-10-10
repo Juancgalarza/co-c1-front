@@ -21,7 +21,7 @@ $(function(){
                     text: 'La cédula es incorrecta',
                     icon: 'error',
                     confirmButtonText: 'Ok',
-                    confirmButtonColor: '#068928'
+                    confirmButtonColor: '#004a43'
                   });
             }
         });
@@ -49,7 +49,8 @@ $(function(){
                         title: 'Error!',
                         text: 'No hay cargos disponibles',
                         icon: 'error',
-                        confirmButtonText: 'Ok' 
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: '#004a43' 
                    })
                }
            },
@@ -154,7 +155,8 @@ $(function(){
                 title: 'Error!',
                 text: 'La cédula es incorrecta',
                 icon: 'error',
-                confirmButtonText: 'Ok'
+                confirmButtonText: 'Ok',
+                confirmButtonColor: '#004a43'
             })
             return false;
         }else{
@@ -332,7 +334,8 @@ $(function(){
                 title: 'Error!',
                 text: 'Las claves no coinciden',
                 icon: 'error',
-                confirmButtonText: 'Ok'
+                confirmButtonText: 'Ok',
+                confirmButtonColor: '#004a43'
               });
             return false;
         }
@@ -356,7 +359,8 @@ $(function(){
                         title: 'Usuario',
                         text: response.mensaje,
                         icon: 'success',
-                        confirmButtonText: 'Ok'
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: '#004a43'
                     });
                     $('#form-nuevo-persona')[0].reset();
                     $('#form-nuevo-usuario')[0].reset();
@@ -396,7 +400,8 @@ $(function(){
                             title: 'Usuario',
                             text: responseImg.mensaje,
                             icon: 'success',
-                            confirmButtonText: 'Ok'
+                            confirmButtonText: 'Ok',
+                            confirmButtonColor: '#004a43'
                         });
                     }
                 },

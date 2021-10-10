@@ -25,7 +25,8 @@ $(function(){
                     title: 'Error!',
                     text: 'Ingrese usuario o correo',
                     icon: 'error',
-                    confirmButtonText: 'Ok'
+                    confirmButtonText: 'Ok',
+                    confirmButtonColor: '#004a43'
                   })
             }else
             if(usuario.length < 4){
@@ -33,9 +34,9 @@ $(function(){
                     title: 'Error!',
                     text: 'El usuario o correo debe tener más de 4 carácteres',
                     icon: 'error',
-                    confirmButtonText: 'Ok'
+                    confirmButtonText: 'Ok',
+                    confirmButtonColor: '#004a43'
                   })
-                // console.log("El usuario o correo debe tener más de 4 carácteres");
             }
             else
             if(clave.length == 0){
@@ -43,7 +44,8 @@ $(function(){
                     title: 'Error!',
                     text: 'Ingrese una contraseña',
                     icon: 'error',
-                    confirmButtonText: 'Ok'
+                    confirmButtonText: 'Ok',
+                    confirmButtonColor: '#004a43'
                   })
             }else
             if(clave.length < 4){
@@ -51,9 +53,9 @@ $(function(){
                     title: 'Error!',
                     text: 'La clave debe tener mínimo 4 carácteres',
                     icon: 'error',
-                    confirmButtonText: 'Ok'
+                    confirmButtonText: 'Ok',
+                    confirmButtonColor: '#004a43'
                   })
-                // console.log("La clave debe tener mínimo 4 carácteres");
             }
             else{
                 let json = {
@@ -79,12 +81,12 @@ $(function(){
             success : function(response) {
 
                 if(response.status){
-                    Swal.fire(
-                        'Bienvenido!',
-                        response.mensaje,
-                        'success'
-                    );
-
+                    Swal.fire({
+                        title:'Bienvenido!',
+                        text: response.mensaje,
+                        confirmButtonColor: '#004a43',
+                    });
+                    
                     $('#form-login')[0].reset();
 
                     let sesion = response.usuario;
@@ -97,7 +99,8 @@ $(function(){
                         title: 'Error!',
                         text: response.mensaje,
                         icon: 'error',
-                        confirmButtonText: 'Ok'
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: '#004a43'
                       })
                 }
             },

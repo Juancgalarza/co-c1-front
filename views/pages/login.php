@@ -54,4 +54,4 @@
 </div>
 
 
-<script src="<?=BASE?>views/dist/js/scripts/login.js?ver=1.1.1"></script>
+<script src="<?=BASE?>views/dist/js/scripts/login.js?ver=1.1.1.2"></script>

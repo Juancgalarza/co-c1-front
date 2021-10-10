@@ -37,5 +37,5 @@
     
 
     <!-- Url del servidor para la conexion a la api -->
-    <script src="<?=BASE?>views/dist/js/scripts/base.js?ver=1.1.1"></script> 
+    <script src="<?=BASE?>views/dist/js/scripts/base.js?ver=1.1.1.1"></script> 
   </head>

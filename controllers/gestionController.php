@@ -15,4 +15,8 @@ class GestionController{
         require_once 'views/contents/listarUsuario.php';
     }
 
+    public function clienteslistar(){
+        require_once 'views/contents/listarCliente.php';
+    }
+
 }

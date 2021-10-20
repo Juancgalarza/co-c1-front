@@ -365,6 +365,14 @@ $(function(){
                     $('#form-nuevo-persona')[0].reset();
                     $('#form-nuevo-usuario')[0].reset();
                    // $('#imagen-usuario').attr('src',urlServidor + 'resources/usuarios/default.jpg');
+                }else{
+                    Swal.fire({
+                        title: 'Usuario',
+                        text: response.mensaje,
+                        icon: 'error',
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: '#004a43'
+                    });
                 }
              },
              error : function(jqXHR, status, error) {

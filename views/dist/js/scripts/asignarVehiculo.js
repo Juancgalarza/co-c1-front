@@ -130,11 +130,13 @@
                     success : function(response) {
         
                         if(response.status){
-                            Swal.fire(
-                                'Vehículo!',
-                                response.mensaje,
-                                'success'
-                            );
+                            Swal.fire({
+                                title: 'Vehículo!',
+                                text: response.mensaje,
+                                icon: 'success',
+                                confirmButtonText: 'Ok',
+                                confirmButtonColor: '#004a43'
+                            });
                             cargarVehiculosDisponibles('S');
                             cargarClientesVehiculos();
                             $('#cliente-cargar').text('------------------');

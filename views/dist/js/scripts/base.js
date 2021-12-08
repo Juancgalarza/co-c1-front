@@ -1,4 +1,4 @@
 
 const urlServidor = "http://192.168.100.213/hr_orrala/co-c1-back/";
-const urlCliente = "http://192.168.100.107/hr_orrala/co-c1-front/";
+const urlCliente = "http://192.168.100.86/hr_orrala/co-c1-front/";
 

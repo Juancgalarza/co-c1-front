@@ -9,6 +9,7 @@
         filtrar_lista_ordenes_pendiente();
         filtrar_lista_ordenes_proceso();
         filtrar_lista_ordenes_terminados();
+        imprimir_orden();
     }
 
     function listar_ordenes_pendiente(op,estado){        
@@ -36,7 +37,7 @@
                     $('#servicio-pendiente').html(b);        
                     response.ordenes.forEach(element => { 
                                               
-                        option +=`<div class="col-4">
+                        option +=`<div class="col-12 col-md-6 col-sm-6 col-xs-12">
                         <div class="card mb-2 border-danger">
                         <h4 style="color:white";
                             class="card-header bg-danger d-flex justify-content-between">
@@ -92,7 +93,12 @@
                                     </label> <span>${element.orden.fecha}</span>
                                 </div>
                             </div>
-                        </div>
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <a class="text-danger" style="cursor: pointer" onclick='ver_orden(${element.orden.id})'><i class="fas fa-tools mr-2"></i>Ver Orden</a>
+                                        </div>
+                                    </div>
+                           </div>
                      </div>
                     </div>` 
                     
@@ -353,6 +359,22 @@
         });
     }
 
+    function imprimir_orden(){
+        $('#btn-imprimir').click(function(){
+            let element = document.getElementById('modal-body-orden');
+            let opt = {
+            margin:       1,
+            filename:     'Orden de Trabajo.pdf',
+            image:        { type: 'jpeg', quality: 2 },
+            html2canvas:  { scale: 1 },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            // New Promise-based usage:
+            html2pdf().set(opt).from(element).save();
+        });
+    }
+
 /* }); */
 
 function cambiar_estado(id,estado_id,estado_mecanico){
@@ -377,6 +399,50 @@ function cambiar_estado(id,estado_id,estado_mecanico){
                 listar_ordenes_proceso(1,2);
                 listar_ordenes_terminados(1,3);
             }
+        },
+        error : function(jqXHR, status, error) {
+            console.log('Disculpe, existió un problema');
+        },
+        complete : function(jqXHR, status) {
+            // console.log('Petición realizada');
+        }
+    });
+}
+
+function ver_orden(id){
+    $('#modal-orden').modal('show');
+    $.ajax({
+        // la URL para la petición
+        url : urlServidor + 'orden/listar/' + id ,
+        // especifica si será una petición POST o GET
+        type : 'GET',
+        // el tipo de información que se espera de respuesta
+        dataType : 'json',
+        success : function(response) { 
+           console.log(response);
+           if(response.status){
+            $('#proceso-fecha-orden').text(response.orden.fecha);
+            $('#proceso-id-orden').text(response.orden.id);
+            $('#proceso-kilometro-orden').text(response.orden.vehiculo.kilometraje);
+            $('#proceso-placa-orden').text(response.orden.vehiculo.placa);
+            $('#proceso-marca-orden').text(response.orden.vehiculo.marca.nombre);
+            $('#proceso-modelo-orden').text(response.orden.vehiculo.modelo);
+            $('#proceso-cedula-cliente-orden').text(response.orden.cliente.persona.cedula);
+            $('#proceso-nombre-cliente-orden').text(response.orden.cliente.persona.nombres + ' ' + response.orden.cliente.persona.apellidos);
+            $('#proceso-telefono-cliente-orden').text(response.orden.cliente.persona.telefono);
+            $('#mecanico-cedula-orden').text(response.orden.mecanico.persona.cedula);
+            $('#mecanico-nombre-orden').text(response.orden.mecanico.persona.nombres + ' ' + response.orden.mecanico.persona.apellidos);
+            $('#mecanico-telefono-orden').text(response.orden.mecanico.persona.telefono);
+
+            let servicios = response.servicio;
+            let p = '';
+            servicios.forEach(element => {
+                p += `<p class="sin-margin-x"> <i class="fa fa-angle-double-right mr-2"></i> ${element.servicio}</p>`;
+            });
+            $('#proceso-servicio-orden').html(p);
+
+            $('#proceso-total-orden').text(response.orden.total);
+           }
         },
         error : function(jqXHR, status, error) {
             console.log('Disculpe, existió un problema');

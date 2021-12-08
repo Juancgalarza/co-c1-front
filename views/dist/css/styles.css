@@ -5,3 +5,55 @@
 .error{
     color: red !important;
 }
+
+.orden-trabajo{
+    border: 1px solid #000000;
+}
+
+.sin-margin-y{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.sin-margin-x{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.sin-padding-y{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.text-azul{
+    color: #4040ff !important;
+}
+
+.border-rigth{
+    border-right: 1px solid #000000 !important;
+}
+
+.title-orden-card{
+    border-bottom: 1px solid red;
+    width: 50%;
+    margin-bottom: 14px;
+}
+
+.title-orden{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+   text-transform: uppercase;
+   background: #b8babb;
+   color: #2471A3;
+   font-weight: bold;
+}
+
+.border-rigth{
+    border-right: 1px solid #000000 !important;
+}
+
+.border-top{
+    border-top: 1px solid #000000 !important;
+}

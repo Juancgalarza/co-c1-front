@@ -119,6 +119,7 @@
                             </div>
                         </div>
                     </div>`;
+                    label = '';
                     });
                 }else{
                     div = `<div class="col-12">

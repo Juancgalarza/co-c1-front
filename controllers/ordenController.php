@@ -33,4 +33,8 @@ class OrdenController{
         require_once 'views/contents/ordenesTerminadas.php';
     }
 
+    public function pagada(){
+        require_once 'views/contents/ordenesPagadas.php';
+    }
+
 }
